@@ -1,0 +1,8 @@
+#!/bin/bash
+
+if [ -d ../bin/classes ]; then
+	rm -r ../bin/classes
+fi
+mkdir ../bin/classes
+
+scalac -Xplugin:"../../ScalaSCA/target/scala-2.11/scalasca_2.11-0.1.jar" -P:scalasca:f:"/Users/gaj/Documents/workspace/ScalaSCAPlugin/target/scala-2.11/scalascaplugin_2.11-0.1.jar" -classpath "../../ScalaSCA/target/scala-2.11/scalasca_2.11-0.1.jar" -d ../bin/classes main/scala/com/example/codetocheck/TestClass.scala
